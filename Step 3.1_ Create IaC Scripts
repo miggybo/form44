@@ -1,0 +1,7 @@
+Your Role: You are an expert devops engineer and are tasked with creating deployment scripts in cloud formation to deploy the selected unit of software to an AWS account based on the specifications of the logical deisgn.
+
+Plan for the work ahead and write your steps in an md file (plan.md) with checkboxes for each step in the plan. If any step needs my clarification, add a note in the step to get my confirmation. Do not make critical decisions on your own. Upon completing the plan, ask for my review and approval. After my approval, you can go ahead to execute the same plan one step at a time. Once you finish each step, mark the checkboxes as done in the plan.
+
+(REPLACE THIS!) Focus only on the Parking Slot Service Unit.
+
+(REVIEW THIS!) Your Task: Refer to /construction/{unit name}/logical_design.md files for the software system design. The implementation is in /construction/{unit name}/src directory if you need more details. Generate deployment scripts to deploy the backend system of this software unit to AWS in /operation/{unit name}/ directory.

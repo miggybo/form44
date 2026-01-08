@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="005-create-request-documents-table" author="system">
+        <createTable tableName="request_documents">
+            <column name="document_id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="request_id" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_documents_request" references="access_requests(request_id)"/>
+            </column>
+            <column name="document_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="document_size" type="BIGINT"/>
+            <column name="uploaded_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uploaded_by" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

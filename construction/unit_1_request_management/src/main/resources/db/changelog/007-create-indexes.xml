@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="007-create-indexes" author="system">
+        <!-- Indexes for access_requests table -->
+        <createIndex indexName="idx_requests_requestor_id" tableName="access_requests">
+            <column name="requestor_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_requests_status" tableName="access_requests">
+            <column name="status"/>
+        </createIndex>
+
+        <createIndex indexName="idx_requests_access_type_id" tableName="access_requests">
+            <column name="access_type_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_requests_created_at" tableName="access_requests">
+            <column name="created_at"/>
+        </createIndex>
+
+        <createIndex indexName="idx_requests_submitted_at" tableName="access_requests">
+            <column name="submitted_at"/>
+        </createIndex>
+
+        <createIndex indexName="idx_requests_status_created_at" tableName="access_requests">
+            <column name="status"/>
+            <column name="created_at"/>
+        </createIndex>
+
+        <!-- Indexes for request_approvals table -->
+        <createIndex indexName="idx_approvals_request_id" tableName="request_approvals">
+            <column name="request_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_approvals_approver_id" tableName="request_approvals">
+            <column name="approver_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_approvals_request_type" tableName="request_approvals">
+            <column name="request_id"/>
+            <column name="approval_type"/>
+        </createIndex>
+
+        <!-- Indexes for request_history table -->
+        <createIndex indexName="idx_history_request_id" tableName="request_history">
+            <column name="request_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_history_created_at" tableName="request_history">
+            <column name="created_at"/>
+        </createIndex>
+
+        <!-- Indexes for request_documents table -->
+        <createIndex indexName="idx_documents_request_id" tableName="request_documents">
+            <column name="request_id"/>
+        </createIndex>
+
+        <!-- Indexes for access_type_routing table -->
+        <createIndex indexName="idx_routing_access_type_id" tableName="access_type_routing">
+            <column name="access_type_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_routing_access_type_default" tableName="access_type_routing">
+            <column name="access_type_id"/>
+            <column name="is_default"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>
